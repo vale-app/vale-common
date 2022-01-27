@@ -6,7 +6,7 @@ import (
 )
 
 func Client(clientConfig *ClientConfig) *resty.Client {
-	return resty.New().SetBaseURL(clientConfig.Host + ":" + string(rune(clientConfig.Port))).SetHeaders(map[string]string{
+	return resty.New().SetBaseURL(clientConfig.Host + ":" + clientConfig.Port).SetHeaders(map[string]string{
 		"Content-Type": "application/json",
 		"Accept":       "application/json",
 		"User-Agent":   "vale-resty-client",

@@ -2,6 +2,6 @@ package httpclient
 
 type ClientConfig struct {
 	Host    string
-	Port    int
+	Port    string
 	Headers map[string]string
 }
