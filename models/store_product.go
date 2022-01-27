@@ -1,5 +1,7 @@
 package models
 
+import "gorm.io/gorm"
+
 type StoreProduct struct {
 	gorm.Model
 	StoreId        uint    `json:"store_id"`
