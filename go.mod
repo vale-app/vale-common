@@ -1,4 +1,4 @@
-module vale-common
+module  github.com/vale-app/vale-common
 
 go 1.17
 
