@@ -37,6 +37,7 @@ type Product struct {
 	ContainedUnits   uint32   `json:"contained_units" bson:"contained_units"`
 	Ean              string   `json:"ean" bson:"ean"`
 	Sku              string   `json:"sku" bson:"sku"`
+	IsForAdult       bool     `json:"is_for_adult" bson:"is_for_adult" default:"false"`
 }
 
 /*func (p *Product) Creating(ctx context.Context) error {
