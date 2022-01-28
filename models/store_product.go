@@ -1,6 +1,9 @@
 package models
 
-import "gorm.io/gorm"
+import (
+	uuid "github.com/satori/go.uuid"
+	"gorm.io/gorm"
+)
 
 type StoreProduct struct {
 	gorm.Model
@@ -16,4 +19,13 @@ type StoreProduct struct {
 	IsCustom       bool    `json:"is_custom" gorm:"default:false"`
 	Ean            string  `json:"ean"`
 	Sku            string  `json:"sku"`
+}
+
+// BeforeCreate will set a UUID rather than numeric ID.
+func (s *StoreProduct) BeforeCreate(tx *gorm.DB) (err error) {
+	newUUID := uuid.NewV4()
+
+	tx.Statement.SetColumn("InternalId", newUUID.String())
+
+	return
 }
