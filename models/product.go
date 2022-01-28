@@ -34,6 +34,8 @@ type Product struct {
 	Packing          string   `json:"packing"`
 	Weight           float64  `json:"weight"`
 	ContainedUnits   uint32   `json:"contained_units" bson:"contained_units"`
+	Ean              string   `json:"ean" bson:"ean"`
+	Sku              string   `json:"sku" bson:"sku"`
 }
 
 /*func (p *Product) Creating(ctx context.Context) error {

@@ -13,4 +13,6 @@ type StoreProduct struct {
 	Status         string  `json:"status" gorm:"default:'ACTIVE'"`
 	InternalId     string  `json:"internal_id"`
 	IsCustom       bool    `json:"is_custom" gorm:"default:false"`
+	Ean            string  `json:"ean"`
+	Sku            string  `json:"sku"`
 }
