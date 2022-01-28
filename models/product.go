@@ -18,6 +18,7 @@ type Product struct {
 	Name             string   `json:"name"`
 	Status           string   `json:"status" default:"ACTIVE"`
 	Category         string   `json:"category"`
+	SubCategory      string   `json:"sub_category"`
 	Description      string   `json:"description"`
 	ReferencePrice   float64  `json:"reference_price" bson:"reference_price"`
 	Discontinued     bool     `json:"discontinued" default:"false"`

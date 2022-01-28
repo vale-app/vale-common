@@ -6,6 +6,7 @@ type StoreProduct struct {
 	gorm.Model
 	StoreId        uint    `json:"store_id"`
 	Category       string  `json:"category"`
+	SubCategory    string  `json:"sub_category"`
 	ProductId      string  `json:"product_id"`
 	AvailableUnits int     `json:"available_units"`
 	ReservedUnits  int     `json:"reserved_units"`
