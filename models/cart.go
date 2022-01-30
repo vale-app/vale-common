@@ -7,9 +7,8 @@ import (
 
 type Cart struct {
 	mgm.DefaultModel `bson:",inline"`
-	Id               int64  `json:"id"`
-	UserId           int64  `json:"user_id"`
-	StoreId          int64  `json:"store_id"`
+	UserId           string `json:"user_id"`
+	StoreId          int    `json:"store_id"`
 	InternalId       string `json:"internal_id"`
 }
 
