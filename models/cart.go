@@ -1,28 +1,22 @@
 package models
 
 import (
-	"github.com/kamva/mgm/v3"
 	uuid "github.com/satori/go.uuid"
+	"gorm.io/gorm"
 )
 
 type Cart struct {
-	mgm.DefaultModel `bson:",inline"`
-	UserId           string `json:"user_id"`
-	StoreId          int    `json:"store_id"`
-	InternalId       string `json:"internal_id"`
+	gorm.Model
+	UserId     string `json:"user_id"`
+	StoreId    int    `json:"store_id"`
+	InternalId string `json:"internal_id"`
 }
 
-func (p *Cart) Creating() error {
-	// Call the DefaultModel Creating hook
-	if err := p.DefaultModel.Creating(); err != nil {
-		return err
-	}
+// BeforeCreate will set a UUID rather than numeric ID.
+func (s *Cart) BeforeCreate(tx *gorm.DB) (err error) {
+	newUUID := uuid.NewV4()
 
-	// Set the default value for the InternalId field
-	if p.InternalId == "" {
-		newUUID := uuid.NewV4()
-		p.InternalId = newUUID.String()
-	}
+	tx.Statement.SetColumn("InternalId", newUUID.String())
 
-	return nil
+	return
 }
