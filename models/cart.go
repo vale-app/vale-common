@@ -2,16 +2,15 @@ package models
 
 import (
 	uuid "github.com/satori/go.uuid"
-	"github.com/vale-app/vale-common/enums"
 	"gorm.io/gorm"
 )
 
 type Cart struct {
 	gorm.Model
-	UserId     string           `json:"user_id"`
-	StoreId    int              `json:"store_id"`
-	Status     enums.CartStatus `json:"status"`
-	InternalId string           `json:"internal_id"`
+	UserId     string `json:"user_id"`
+	StoreId    int    `json:"store_id"`
+	Status     string `json:"status"`
+	InternalId string `json:"internal_id"`
 }
 
 // BeforeCreate will set a UUID rather than numeric ID.
