@@ -11,8 +11,8 @@ func ExtractPayloadFromJWT(token *string) (payload models.JWTClaims, err error) 
 	return
 }
 
-func ExtractRolesForUser(payload models.JWTPayload) []string {
-	return []string{}
+func ExtractRolesForUser(payload *models.JWTPayload) []string {
+	return payload.Roles
 }
 
 func DoCurrentRolesContainAnyDesiredRoles(currentRoles, toCheckIfHaveRoles *[]string) bool {
