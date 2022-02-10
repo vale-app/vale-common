@@ -10,4 +10,5 @@ type CartItem struct {
 	StoreProductId int     `json:"store_product_id"`
 	Quantity       int     `json:"quantity"`
 	Price          float64 `json:"price"`
+	Product        Product `json:"product"`
 }
