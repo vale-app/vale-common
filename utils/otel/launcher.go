@@ -9,7 +9,7 @@ type LauncherConfig struct {
 	AccessToken string
 }
 
-func NewLauncher(config *LauncherConfig) *Launcher {
+func NewLauncher(config *LauncherConfig) *launcher.Launcher {
 	ls := launcher.ConfigureOpentelemetry(
 		launcher.WithServiceName(config.ServiceName),
 		launcher.WithAccessToken(config.AccessToken),
