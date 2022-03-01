@@ -1,4 +1,4 @@
-package currency
+package enums
 
 type Currency string
 
