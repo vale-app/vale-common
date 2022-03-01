@@ -4,7 +4,7 @@ import "gorm.io/gorm"
 
 type Checkout struct {
 	gorm.Model
-	CartId          string  `gorm:"column:cart_id" json:"cart_id"`
+	CartId          int     `gorm:"column:cart_id" json:"cart_id"`
 	PaymentMethodId string  `gorm:"column:payment_method_id" json:"payment_method_id"`
 	Amount          float32 `gorm:"column:amount" json:"amount"`
 	Currency        string  `gorm:"column:currency" json:"currency"`
