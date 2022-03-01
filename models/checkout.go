@@ -8,14 +8,14 @@ import (
 
 type Checkout struct {
 	gorm.Model
-	CartId          int            `gorm:"column:cart_id" json:"cart_id"`
-	PaymentMethodId string         `gorm:"column:payment_method_id" json:"payment_method_id"`
-	Amount          float32        `gorm:"column:amount" json:"amount"`
-	Currency        enums.Currency `gorm:"column:currency" json:"currency"`
-	Discount        float32        `gorm:"column:discount" json:"discount"`
-	DiscountPercent float32        `gorm:"column:discount_percent" json:"discount_percent"`
-	StoreId         int            `gorm:"column:store_id" json:"store_id"`
-	InternalId      string         `json:"internal_id"`
+	CartId             int            `gorm:"column:cart_id" json:"cart_id"`
+	PaymentMethodId    string         `gorm:"column:payment_method_id" json:"payment_method_id"`
+	Amount             float32        `gorm:"column:amount" json:"amount"`
+	Currency           enums.Currency `gorm:"column:currency" json:"currency"`
+	Discount           float32        `gorm:"column:discount" json:"discount"`
+	DiscountPercentage float32        `gorm:"column:discount_percentage" json:"discount_percent"`
+	StoreId            int            `gorm:"column:store_id" json:"store_id"`
+	InternalId         string         `json:"internal_id"`
 }
 
 // BeforeCreate will set a UUID rather than numeric ID.
