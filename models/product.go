@@ -8,13 +8,13 @@ type Image struct {
 }
 
 type Measures struct {
-	Height float64 `json:"name:height" type:"float"`
-	Width  float64 `json:"name:width" type:"float"`
-	Depth  float64 `json:"name:depth" type:"float"`
+	Height float64 `json:"height" type:"float"`
+	Width  float64 `json:"width" type:"float"`
+	Depth  float64 `json:"depth" type:"float"`
 }
 
 type Product struct {
-	ID             string    `json:"name:id" type:"string"`
+	ID             string    `json:"id" type:"string"`
 	Name           string    `json:"name"`
 	Status         string    `json:"status" default:"ACTIVE"`
 	Category       string    `json:"category"`
