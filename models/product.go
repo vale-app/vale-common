@@ -12,6 +12,7 @@ type Measures struct {
 }
 
 type Product struct {
+	ID             string   `json:"name:id" type:"string"`
 	Name           string   `json:"name"`
 	Status         string   `json:"status" default:"ACTIVE"`
 	Category       string   `json:"category"`
@@ -35,6 +36,9 @@ type Product struct {
 	Ean            string   `json:"ean" bson:"ean"`
 	Sku            string   `json:"sku" bson:"sku"`
 	IsForAdult     bool     `json:"is_for_adult" bson:"is_for_adult" default:"false"`
+	CreatedAt      int64    `json:"created_at" bson:"created_at"`
+	UpdatedAt      int64    `json:"updated_at" bson:"updated_at"`
+	DeletedAt      int64    `json:"deleted_at" bson:"deleted_at"`
 }
 
 /*func (p *Product) Creating(ctx context.Context) error {
