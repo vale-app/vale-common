@@ -10,21 +10,24 @@ type Category struct {
 
 type SubCategory struct {
 	gorm.Model
-	Id       int64    `json:"id"`
-	Name     string   `json:"name"`
-	Category Category `json:"category"`
+	Id         int64    `json:"id"`
+	Name       string   `json:"name"`
+	CategoryId int64    `json:"category_id"`
+	Category   Category `json:"category"`
 }
 
 type Segment struct {
 	gorm.Model
-	Id          int64       `json:"id"`
-	Name        string      `json:"name"`
-	SubCategory SubCategory `json:"sub_category"`
+	Id            int64       `json:"id"`
+	Name          string      `json:"name"`
+	SubCategoryId int64       `json:"sub_category_id"`
+	SubCategory   SubCategory `json:"sub_category"`
 }
 
 type SubSegment struct {
 	gorm.Model
-	Id      int64   `json:"id"`
-	Name    string  `json:"name"`
-	Segment Segment `json:"segment"`
+	Id        int64   `json:"id"`
+	Name      string  `json:"name"`
+	SegmentId int64   `json:"segment_id"`
+	Segment   Segment `json:"segment"`
 }
