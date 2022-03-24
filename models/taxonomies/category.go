@@ -10,7 +10,7 @@ type Category struct {
 
 type SubCategory struct {
 	gorm.Model
-	Id         uint     `json:"id"`
+	Id         uint     `json:"id" gorm:"primaryKey"`
 	Name       string   `json:"name"`
 	CategoryId uint     `json:"category_id"`
 	Category   Category `json:"category"`
@@ -18,7 +18,7 @@ type SubCategory struct {
 
 type Segment struct {
 	gorm.Model
-	Id            uint        `json:"id"`
+	Id            uint        `json:"id" gorm:"primaryKey"`
 	Name          string      `json:"name"`
 	SubCategoryId uint        `json:"sub_category_id"`
 	SubCategory   SubCategory `json:"sub_category"`
@@ -26,7 +26,7 @@ type Segment struct {
 
 type SubSegment struct {
 	gorm.Model
-	Id        uint    `json:"id"`
+	Id        uint    `json:"id" gorm:"primaryKey"`
 	Name      string  `json:"name"`
 	SegmentId uint    `json:"segment_id"`
 	Segment   Segment `json:"segment"`
