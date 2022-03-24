@@ -20,6 +20,7 @@ type StoreProduct struct {
 	Ean            string   `json:"ean"`
 	Sku            string   `json:"sku"`
 	Product        *Product `json:"product" gorm:"-"`
+	ProductName    string   `json:"product_name"`
 }
 
 // BeforeCreate will set a UUID rather than numeric ID.
