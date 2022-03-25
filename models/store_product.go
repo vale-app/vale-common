@@ -8,8 +8,10 @@ import (
 type StoreProduct struct {
 	gorm.Model
 	StoreId        uint     `json:"store_id"`
-	Category       string   `json:"category"`
-	SubCategory    string   `json:"sub_category"`
+	CategodyID     uint     `json:"category_id"`
+	SubCategoryID  uint     `json:"sub_category_id"`
+	SegmentID      uint     `json:"segment_id"`
+	SubSegmentID   uint     `json:"sub_segment_id"`
 	ProductId      string   `json:"product_id"`
 	AvailableUnits int      `json:"available_units"`
 	ReservedUnits  int      `json:"reserved_units"`
