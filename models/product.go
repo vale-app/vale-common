@@ -14,33 +14,39 @@ type Measures struct {
 }
 
 type Product struct {
-	ID             string    `json:"id" type:"string"`
-	Name           string    `json:"name"`
-	Status         string    `json:"status" default:"ACTIVE"`
-	Category       string    `json:"category"`
-	SubCategory    string    `json:"sub_category"`
-	Description    string    `json:"description"`
-	ReferencePrice float64   `json:"reference_price" bson:"reference_price"`
-	Discontinued   bool      `json:"discontinued" default:"false"`
-	InternalId     string    `json:"internal_id"`
-	IsPharma       bool      `json:"is_pharma" bson:"is_pharma" default:"false"`
-	IsAlcoholic    bool      `json:"is_alcoholic" bson:"is_alcoholic" default:"false"`
-	IsCigarette    bool      `json:"is_cigarette" bson:"is_cigarette" default:"false"`
-	NeedsRx        bool      `json:"needs_rx" bson:"needs_rx" default:"false"`
-	Maker          string    `json:"maker"`
-	TradeMark      string    `json:"trade_mark" bson:"trade_mark"`
-	Images         []Image   `json:"images"`
-	Measures       Measures  `json:"measures"`
-	Metadata       string    `json:"metadata"`
-	Packing        string    `json:"packing"`
-	Weight         float64   `json:"weight"`
-	ContainedUnits uint32    `json:"contained_units" bson:"contained_units"`
-	Ean            string    `json:"ean" bson:"ean"`
-	Sku            string    `json:"sku" bson:"sku"`
-	IsForAdult     bool      `json:"is_for_adult" bson:"is_for_adult" default:"false"`
-	CreatedAt      time.Time `json:"created_at" bson:"created_at"`
-	UpdatedAt      time.Time `json:"updated_at"`
-	DeletedAt      time.Time `json:"deleted_at"`
+	ID              string    `json:"id" type:"string"`
+	Name            string    `json:"name"`
+	Status          string    `json:"status" default:"ACTIVE"`
+	CategoryName    string    `json:"category_name"`
+	SubCategoryName string    `json:"sub_category_name"`
+	SegmentName     string    `json:"segment_name"`
+	SubSegmentName  string    `json:"sub_segment_name"`
+	CategoryID      uint      `json:"category_id"`
+	SubCategoryID   uint      `json:"sub_category_id"`
+	SegmentID       uint      `json:"segment_id"`
+	SubSegmentID    uint      `json:"sub_segment_id"`
+	Description     string    `json:"description"`
+	ReferencePrice  float64   `json:"reference_price"`
+	Discontinued    bool      `json:"discontinued" default:"false"`
+	InternalId      string    `json:"internal_id"`
+	IsPharma        bool      `json:"is_pharma" default:"false"`
+	IsAlcoholic     bool      `json:"is_alcoholic" default:"false"`
+	IsCigarette     bool      `json:"is_cigarette" default:"false"`
+	NeedsRx         bool      `json:"needs_rx" default:"false"`
+	Maker           string    `json:"maker"`
+	TradeMark       string    `json:"trade_mark"`
+	Images          []Image   `json:"images"`
+	Measures        Measures  `json:"measures"`
+	Metadata        string    `json:"metadata"`
+	Packing         string    `json:"packing"`
+	Weight          float64   `json:"weight"`
+	ContainedUnits  uint32    `json:"contained_units"`
+	Ean             string    `json:"ean"`
+	Sku             string    `json:"sku"`
+	IsForAdult      bool      `json:"is_for_adult" default:"false"`
+	CreatedAt       time.Time `json:"created_at"`
+	UpdatedAt       time.Time `json:"updated_at"`
+	DeletedAt       time.Time `json:"deleted_at"`
 }
 
 /*func (p *Product) Creating(ctx context.Context) error {
