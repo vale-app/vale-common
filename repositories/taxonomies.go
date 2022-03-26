@@ -5,7 +5,6 @@ import (
 
 	"github.com/go-resty/resty/v2"
 	"github.com/vale-app/vale-common/models"
-	"github.com/vale-app/vale-common/utils"
 )
 
 type TaxonomiesService struct {
@@ -22,13 +21,13 @@ func (s *TaxonomiesService) GetCategoryByID(categoryID uint) (*models.Category, 
 		return nil, err
 	}
 
-	var c models.Category
-	err = utils.JsonToStruct(string(res.Body()), &c)
-	if err != nil {
-		return nil, err
+	if res.IsError() {
+		return nil, fmt.Errorf("%s", resp.Status())
 	}
 
-	return &c, nil
+	c := res.Result().(*models.Category)
+
+	return c, nil
 }
 
 func (s *TaxonomiesService) GetSubCategoryByID(subCategoryID uint) (*models.SubCategory, error) {
@@ -37,11 +36,11 @@ func (s *TaxonomiesService) GetSubCategoryByID(subCategoryID uint) (*models.SubC
 		return nil, err
 	}
 
-	var c models.SubCategory
-	err = utils.JsonToStruct(string(res.Body()), c)
-	if err != nil {
-		return nil, err
+	if res.IsError() {
+		return nil, fmt.Errorf("%s", resp.Status())
 	}
 
-	return &c, nil
+	sc := res.Result().(*models.SubCategory)
+
+	return sc, nil
 }
