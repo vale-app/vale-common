@@ -22,7 +22,7 @@ func (s *TaxonomiesService) GetCategoryByID(categoryID uint) (*models.Category, 
 	}
 
 	if res.IsError() {
-		return nil, fmt.Errorf("%s", resp.Status())
+		return nil, fmt.Errorf("%s", res.Status())
 	}
 
 	c := res.Result().(*models.Category)
@@ -37,7 +37,7 @@ func (s *TaxonomiesService) GetSubCategoryByID(subCategoryID uint) (*models.SubC
 	}
 
 	if res.IsError() {
-		return nil, fmt.Errorf("%s", resp.Status())
+		return nil, fmt.Errorf("%s", res.Status())
 	}
 
 	sc := res.Result().(*models.SubCategory)
