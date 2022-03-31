@@ -37,3 +37,7 @@ type SubSegment struct {
 	SegmentId uint    `json:"segment_id"`
 	Segment   Segment `json:"segment" gorm:"references:Id"`
 }
+
+type CategoryTaxonomy struct {
+	Category Category
+}
