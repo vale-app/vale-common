@@ -16,7 +16,7 @@ func NewTaxonomiesService(client *resty.Client) *TaxonomiesService {
 }
 
 func (s *TaxonomiesService) GetCategoryByID(categoryID uint) (*models.Category, error) {
-	res, err := s.client.R().Get(fmt.Sprintf("/taxonomies/categories/%d", categoryID))
+	res, err := s.client.R().SetResult(&models.Category{}).Get(fmt.Sprintf("/taxonomies/categories/%d", categoryID))
 	if err != nil {
 		return nil, err
 	}
@@ -31,7 +31,7 @@ func (s *TaxonomiesService) GetCategoryByID(categoryID uint) (*models.Category, 
 }
 
 func (s *TaxonomiesService) GetSubCategoryByID(subCategoryID uint) (*models.SubCategory, error) {
-	res, err := s.client.R().Get(fmt.Sprintf("/taxonomies/subcategories/%d", subCategoryID))
+	res, err := s.client.R().SetResult(&models.SubCategory{}).Get(fmt.Sprintf("/taxonomies/subcategories/%d", subCategoryID))
 	if err != nil {
 		return nil, err
 	}
