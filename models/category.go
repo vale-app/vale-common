@@ -7,11 +7,11 @@ import (
 )
 
 type Category struct {
-	Id        int64     `json:"id" gorm:"primaryKey"`
-	Name      string    `json:"name"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
-	DeletedAt time.Time `gorm:"index"`
+	Id        int64      `json:"id" gorm:"primaryKey"`
+	Name      string     `json:"name"`
+	CreatedAt time.Time  `json:"created_at"`
+	UpdatedAt time.Time  `json:"updated_at"`
+	DeletedAt *time.Time `json:"deleted_at" gorm:"index"`
 }
 
 type SubCategory struct {
