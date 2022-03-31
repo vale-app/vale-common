@@ -1,11 +1,17 @@
 package models
 
-import "gorm.io/gorm"
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
 
 type Category struct {
-	gorm.Model
-	Id   int64  `json:"id"`
-	Name string `json:"name"`
+	Id        int64     `json:"id" gorm:"primaryKey"`
+	Name      string    `json:"name"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
+	DeletedAt time.Time `gorm:"index"`
 }
 
 type SubCategory struct {
